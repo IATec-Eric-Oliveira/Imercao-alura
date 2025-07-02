@@ -1,0 +1,11 @@
+services:
+  app:
+    # Constrói a imagem a partir do Dockerfile no diretório atual
+    build: .
+    container_name: api-alura-imeracao
+    ports:
+      - "8000:8000"
+    # Monta o diretório atual dentro do contêiner para desenvolvimento
+    # As alterações no código serão refletidas sem precisar reconstruir a imagem
+    volumes:
+      - .:/app
